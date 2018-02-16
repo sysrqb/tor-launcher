@@ -27,6 +27,10 @@ do
       continue
     fi
     target="../../src/chrome/locale/$(echo "${locale}" | tr _ -)"
+    if [ x"${locale}" = xen ];
+    then
+        target="${target}-US"
+    fi
     mkdir -p "${target}"
     cp -f "${locale}"/* "${target}"/
   done
