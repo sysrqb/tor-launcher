@@ -2,14 +2,15 @@
 ### Copyright (c) 2013, The Tor Project, Inc.
 ### See LICENSE for licensing information.
 
-torlauncher.jar:
+[features/tor-launcher@torproject.org] chrome.jar:
   components/     (src/components/*)
 
 % content  torlauncher %content/
   content/        (src/chrome/content/*)
 
-% locale   torlauncher @AB_CD@ %locale/@AB_CD@/
-  locale/@AB_CD@/ (src/chrome/locale/@AB_CD@/*)
+# Normally this would be @AB_CD@, but we don't know which locale we
+% locale   torlauncher en-US %locale/en-US/
+  locale/         (src/chrome/locale/*)
 
   modules/        (src/modules/*)
 
