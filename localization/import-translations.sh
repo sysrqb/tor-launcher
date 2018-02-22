@@ -27,6 +27,12 @@ do
       continue
     fi
     target="../../src/chrome/locale/$(echo "${locale}" | tr _ -)"
+    # The en-US locale is "en" in transifex, but we need the files
+    # available in en-US/ instead of en/.
+    if [ "x${locale}" = "xen" ]
+    then
+      target="${target}-US"
+    fi
     mkdir -p "${target}"
     cp -f "${locale}"/* "${target}"/
   done

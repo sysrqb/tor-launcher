@@ -36,8 +36,6 @@ pkg-prepare:	clean
 		fi \
 	fi
 	@cp -a chrome.manifest.in "$(TMP)/$(EXT_NAME)"/chrome.manifest
-	@mv "$(TMP)/$(EXT_NAME)"/chrome/locale/en \
-	    "$(TMP)/$(EXT_NAME)"/chrome/locale/en-US
 	@for d in "$(TMP)/$(EXT_NAME)"/chrome/locale/*; do \
 	   if [ "`basename "$${d}"`" = "en-US" ]; then \
 	     continue; \
