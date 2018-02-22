@@ -86,8 +86,20 @@ standalone:	pkg-prepare
 	@rm -rf "$(TMP)"
 	@echo "Created standalone package pkg/$(STANDALONE_TARBALL)"
 
+tb-prepare:	pkg-prepare
+	mv $(TMP)/$(EXT_NAME)/locale src/chrome/locale
+	@if [ -n "$(TL_LOGO)" ]; then \
+		if [ "$(TL_LOGO)" = "-" ]; then \
+			rm src/chrome/skin/tbb-logo.png"; \
+		else \
+			mv "$(TMP)/$(EXT_NAME)/chrome/skin/tbb-logo.png" src/chrome/skin/tbb-logo.png"; \
+		fi \
+	fi
+	@rm -rf "$(TMP)"
+
 import-translations:
 	@( cd localization && ./import-translations.sh )
+
 
 clean:
 	@rm -f	"pkg/$(XPI_NAME)" \
