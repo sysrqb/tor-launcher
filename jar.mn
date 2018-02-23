@@ -2,7 +2,7 @@
 ### Copyright (c) 2013, The Tor Project, Inc.
 ### See LICENSE for licensing information.
 
-[browser/feature/tor-launcher@torproject.org] torlauncher.jar:
+torlauncher.jar:
   components/     (src/components/*)
 
 % content  torlauncher %content/
