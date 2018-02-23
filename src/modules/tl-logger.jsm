@@ -108,8 +108,8 @@ let TLLoggerInternal = // Private
   {
     // Register observer
     var prefs = Cc["@mozilla.org/preferences-service;1"]
-                  .getService(Ci.nsIPrefBranchInternal)
-                  .QueryInterface(Ci.nsIPrefBranchInternal);
+                  .getService(Ci.nsIPrefBranch)
+                  .QueryInterface(Ci.nsIPrefBranch);
     prefs.addObserver("extensions.torlauncher", this, false);
 
     this.mLogLevel = TorLauncherUtil.getIntPref(
