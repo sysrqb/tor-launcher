@@ -6,8 +6,10 @@
 
 JAR_MANIFESTS += ['jar.mn']
 
-JS_PREFERENCE_FILES += [ 'src/defaults/preferences/torlauncher.js' ]
+JS_PREFERENCE_FILES += [ 'src/defaults/preferences/prefs.js' ]
 
-FINAL_TARGET_FILES.browser.feature['tor-launcher@torproject.org'] += [
+DIST_SUBDIR = CONFIG['TOR_BROWSER_FEATURES'] + '/tor-launcher@torproject.org'
+
+FINAL_TARGET_FILES += [
   'src/install.rdf',
 ]
